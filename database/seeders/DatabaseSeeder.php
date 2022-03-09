@@ -20,9 +20,11 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         Storage::deleteDirectory('public/categories'); // Elimina la carpeta
         Storage::deleteDirectory('public/subcategories'); // Elimina la carpeta
+        Storage::deleteDirectory('public/products');
 
         Storage::makeDirectory('public/categories'); // Vuelve a crear la carpeta: products
         Storage::makeDirectory('public/subcategories'); // Vuelve a crear la carpeta: products
+        Storage::makeDirectory('public/products');
 
         // LLamadas a Seeder
         $this->call(UserSeeder::class);
