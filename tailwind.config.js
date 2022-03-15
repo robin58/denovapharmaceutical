@@ -1,4 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
+
 
 module.exports = {
     content: [
@@ -13,6 +15,14 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            // Configuración de colores para Denova Pharmaceutical
+            colors: {
+                sky:   colors.sky,
+                slate: colors.slate,
+                blue: colors.blue,
+                neutral: colors.neutral,
+                indigo: colors.indigo,
+            }
         },
     },
 
