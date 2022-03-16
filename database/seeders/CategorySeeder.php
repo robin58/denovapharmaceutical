@@ -22,7 +22,7 @@ class CategorySeeder extends Seeder
            [
                'name' => 'Electromeso',
                'slug' => Str::slug('Electromeso'),
-               'icon' => '<i class="fa-solid fa-person-simple"></i>'
+               'icon' => '<i class="fa-light fa-vial"></i>'
            ],
             [
                'name' => 'Medicare',

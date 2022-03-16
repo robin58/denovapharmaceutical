@@ -13,7 +13,7 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         {{-- Para usar en toda las plantillas FontAwesome--}}
-        <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/fontAwesome.Pro.6/web/css/all.min.css') }}">
 
         @livewireStyles
 
