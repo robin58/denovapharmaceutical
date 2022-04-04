@@ -3,3 +3,4 @@
 @import 'tailwindcss/utilities';
 /* Importación de archivos css */
 @import 'container.css';
+@import 'nav.css';

@@ -10,15 +10,20 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
-        <!-- Styles -->
+        {{-- Start Styles --}}
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         {{-- Para usar en toda las plantillas FontAwesome--}}
         <link rel="stylesheet" href="{{ asset('vendor/fontAwesome.Pro.6/web/css/all.min.css') }}">
+        {{-- Carousel--}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.css" integrity="sha512-YM6sLXVMZqkCspZoZeIPGXrhD9wxlxEF7MzniuvegURqrTGV2xTfqq1v9FJnczH+5OGFl5V78RgHZGaK34ylVg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        {{-- End Styles --}}
 
         @livewireStyles
 
-        <!-- Scripts -->
+        {{-- Start Script --}}
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.js" integrity="sha512-tHimK/KZS+o34ZpPNOvb/bTHZb6ocWFXCtdGqAlWYUcz+BGHbNbHMKvEHUyFxgJhQcEO87yg5YqaJvyQgAEEtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        {{-- End Script --}}
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -38,5 +43,32 @@
         @stack('modals')
 
         @livewireScripts
+
+       {{-- Agregamos la función del menu aquí, para usarlo de forma global --}}
+        <script>
+            function dropdown(){
+                return {
+                    // booleano para controlar el despliegue del menu para desarrollo : true
+                    open: false,
+                    show(){
+                        if(this.open){
+                            //Se cierra el menu
+                            this.open = false;
+                            document.getElementsByTagName('html')[0].style.overflow = 'auto'
+                        }else{
+                            //Esta abriendo el menu
+                            this.open = true;
+                            document.getElementsByTagName('html')[0].style.overflow = 'hidden'
+                        }
+                    },
+                    close(){
+                        this.open = false;
+                        document.getElementsByTagName('html')[0].style.overflow = 'auto'
+                    }
+                }
+            }
+        </script>
+        {{-- Usamos la directiva @stack--}}
+        @stack('script')
     </body>
 </html>
